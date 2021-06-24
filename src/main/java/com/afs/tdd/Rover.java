@@ -3,17 +3,17 @@ package com.afs.tdd;
 public class Rover {
 
     private Position position;
-    private String direction;
+    private Direction direction;
 
     public Rover() {
     }
 
-    public Rover(Position position, String direction) {
+    public Rover(Position position, Direction direction) {
         this.position = position;
         this.direction = direction;
     }
 
-    public void init(Position position, String direction) {
+    public void init(Position position, Direction direction) {
         this.position = position;
         this.direction = direction;
     }
@@ -22,7 +22,7 @@ public class Rover {
         return this.position;
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return this.direction;
     }
 }
