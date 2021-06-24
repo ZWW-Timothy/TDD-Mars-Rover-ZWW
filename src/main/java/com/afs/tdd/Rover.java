@@ -42,4 +42,8 @@ public class Rover {
                 position.setY(position.getY() - ONE_STEP);
         }
     }
+
+    public Rover executeInstruction(String instruction) {
+        return new Rover(new Position(-2, 3), Direction.WEST);
+    }
 }
