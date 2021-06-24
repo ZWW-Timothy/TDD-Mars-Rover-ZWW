@@ -7,7 +7,7 @@ public enum Direction {
     SOUTH("S"),
     NORTH("N");
 
-    private String code;
+    private final String code;
 
     Direction(String code) {
         this.code = code;

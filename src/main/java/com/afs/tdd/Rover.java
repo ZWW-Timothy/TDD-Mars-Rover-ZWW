@@ -27,6 +27,18 @@ public class Rover {
     }
 
     public void moveForward() {
-        this.position = new Position(0,1);
+        switch(this.getDirection()) {
+            case EAST:
+                position.setX(position.getX() + 1);
+                break;
+            case WEST:
+                position.setX(position.getX() - 1);
+                break;
+            case SOUTH:
+                position.setY(position.getY() + 1);
+                break;
+            case NORTH:
+                position.setY(position.getY() - 1);
+        }
     }
 }
