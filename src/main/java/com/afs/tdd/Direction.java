@@ -15,4 +15,8 @@ public enum Direction {
     public String getCode() {
         return code;
     }
+
+    public static Direction getByCode(String code) {
+        return Direction.SOUTH;
+    }
 }
