@@ -19,10 +19,10 @@ public class Rover {
     }
 
     public Position getPosition() {
-        return this.position;
+        return position;
     }
 
     public Direction getDirection() {
-        return this.direction;
+        return direction;
     }
 }

@@ -10,6 +10,7 @@ public enum Direction {
     private String code;
 
     Direction(String code) {
+        this.code = code;
     }
 
     public String getCode() {
@@ -17,6 +18,11 @@ public enum Direction {
     }
 
     public static Direction getByCode(String code) {
-        return Direction.SOUTH;
+        for (Direction value : values()) {
+            if (value.getCode().equals(code)) {
+                return value;
+            }
+        }
+        return null;
     }
 }
