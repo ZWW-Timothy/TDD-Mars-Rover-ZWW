@@ -13,4 +13,14 @@ public class DirectionTest {
         assertEquals(Direction.getByCode("N"), Direction.NORTH);
         assertEquals(Direction.getByCode("S"), Direction.SOUTH);
     }
+
+    @Test
+    void should_get_correct_direction_when_turn_left() {
+        assertEquals(Direction.turnLeft(Direction.EAST), Direction.SOUTH);
+    }
+
+    @Test
+    void should_get_correct_direction_when_turn_right() {
+        assertEquals(Direction.turnRight(Direction.EAST), Direction.NORTH);
+    }
 }

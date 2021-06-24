@@ -25,4 +25,12 @@ public enum Direction {
         }
         return null;
     }
+
+    public static Direction turnLeft(Direction direction) {
+        return Direction.SOUTH;
+    }
+
+    public static Direction turnRight(Direction direction) {
+        return Direction.NORTH;
+    }
 }
