@@ -1,5 +1,9 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Rover {
 
     public static final int ONE_STEP = 1;
@@ -28,7 +32,7 @@ public class Rover {
     }
 
     public void moveForward() {
-        switch(this.getDirection()) {
+        switch(direction) {
             case EAST:
                 position.setX(position.getX() + ONE_STEP);
                 break;
@@ -43,7 +47,20 @@ public class Rover {
         }
     }
 
-    public Rover executeInstruction(String instruction) {
-        return new Rover(new Position(-2, 3), Direction.WEST);
+    public Rover executeInstruction(String instructionBatch) {
+        List<String> instructionList = Arrays.stream(instructionBatch.split("")).collect(Collectors.toList());
+        instructionList.forEach(instruction -> {
+            switch(instruction) {
+                case "M":
+                    moveForward();
+                    break;
+                case "L":
+                    direction = Direction.turnLeft(direction);
+                    break;
+                case "R":
+                    direction = Direction.turnRight(direction);
+            }
+        });
+        return new Rover(position, direction);
     }
 }

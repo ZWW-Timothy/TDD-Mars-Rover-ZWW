@@ -45,7 +45,7 @@ class RoverTest {
     @Test
     void should_execute_instruction() {
         rover.init(0,0,"S");
-        Rover roverExecutionResult = rover.executeInstruction("WWLWRWLLWRRWLRLW");
+        Rover roverExecutionResult = rover.executeInstruction("MMLMRMLLMRRMLRLM");
         assertRoverInfo(-2,3, Direction.WEST, roverExecutionResult);
     }
 
