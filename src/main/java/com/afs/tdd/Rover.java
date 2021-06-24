@@ -2,6 +2,7 @@ package com.afs.tdd;
 
 public class Rover {
 
+    public static final int ONE_STEP = 1;
     private Position position;
     private Direction direction;
 
@@ -29,16 +30,16 @@ public class Rover {
     public void moveForward() {
         switch(this.getDirection()) {
             case EAST:
-                position.setX(position.getX() + 1);
+                position.setX(position.getX() + ONE_STEP);
                 break;
             case WEST:
-                position.setX(position.getX() - 1);
+                position.setX(position.getX() - ONE_STEP);
                 break;
             case SOUTH:
-                position.setY(position.getY() + 1);
+                position.setY(position.getY() + ONE_STEP);
                 break;
             case NORTH:
-                position.setY(position.getY() - 1);
+                position.setY(position.getY() - ONE_STEP);
         }
     }
 }
