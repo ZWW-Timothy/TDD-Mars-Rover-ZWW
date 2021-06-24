@@ -17,10 +17,16 @@ public class DirectionTest {
     @Test
     void should_get_correct_direction_when_turn_left() {
         assertEquals(Direction.turnLeft(Direction.EAST), Direction.SOUTH);
+        assertEquals(Direction.turnLeft(Direction.WEST), Direction.NORTH);
+        assertEquals(Direction.turnLeft(Direction.NORTH), Direction.EAST);
+        assertEquals(Direction.turnLeft(Direction.SOUTH), Direction.WEST);
     }
 
     @Test
     void should_get_correct_direction_when_turn_right() {
         assertEquals(Direction.turnRight(Direction.EAST), Direction.NORTH);
+        assertEquals(Direction.turnRight(Direction.WEST), Direction.SOUTH);
+        assertEquals(Direction.turnRight(Direction.NORTH), Direction.WEST);
+        assertEquals(Direction.turnRight(Direction.SOUTH), Direction.EAST);
     }
 }

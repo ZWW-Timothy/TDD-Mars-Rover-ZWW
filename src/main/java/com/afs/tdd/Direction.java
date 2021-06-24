@@ -27,10 +27,30 @@ public enum Direction {
     }
 
     public static Direction turnLeft(Direction direction) {
-        return Direction.SOUTH;
+        switch(direction) {
+            case EAST:
+                return Direction.SOUTH;
+            case WEST:
+                return Direction.NORTH;
+            case SOUTH:
+                return Direction.WEST;
+            case NORTH:
+                return Direction.EAST;
+        }
+        return null;
     }
 
     public static Direction turnRight(Direction direction) {
-        return Direction.NORTH;
+        switch(direction) {
+            case EAST:
+                return Direction.NORTH;
+            case WEST:
+                return Direction.SOUTH;
+            case SOUTH:
+                return Direction.EAST;
+            case NORTH:
+                return Direction.WEST;
+        }
+        return null;
     }
 }
