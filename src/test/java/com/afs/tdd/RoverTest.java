@@ -15,15 +15,36 @@ class RoverTest {
     }
 
     @Test
-    void should_move_one_step_forward_when_get_instruction() {
+    void should_move_one_step_toward_south() {
         rover.init(0,0,"S");
         rover.moveForward();
         assertRover(0, 1, Direction.SOUTH);
     }
 
+    @Test
+    void should_move_one_step_toward_north() {
+        rover.init(0,0,"N");
+        rover.moveForward();
+        assertRover(0, -1, Direction.NORTH);
+    }
+
+    @Test
+    void should_move_one_step_toward_east() {
+        rover.init(0,0,"E");
+        rover.moveForward();
+        assertRover(1, 0, Direction.EAST);
+    }
+
+    @Test
+    void should_move_one_step_toward_west() {
+        rover.init(0,0,"W");
+        rover.moveForward();
+        assertRover(-1, 0, Direction.WEST);
+    }
+
     private void assertRover(int x, int y, Direction direction) {
         assertEquals(x, rover.getPosition().getX());
         assertEquals(y, rover.getPosition().getY());
-        assertEquals(Direction.SOUTH, direction);
+        assertEquals(direction, rover.getDirection());
     }
 }
