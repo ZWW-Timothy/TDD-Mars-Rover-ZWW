@@ -25,4 +25,8 @@ public class Rover {
     public Direction getDirection() {
         return direction;
     }
+
+    public void moveForward() {
+        this.position = new Position(0,1);
+    }
 }
