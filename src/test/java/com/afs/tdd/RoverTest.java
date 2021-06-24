@@ -9,9 +9,10 @@ class RoverTest {
     @Test
     void should_init_position_and_direction() {
         Rover rover = new Rover();
-        rover.init(1, 1, "S");
-        assertEquals(rover.getXPosition(), 1);
-        assertEquals(rover.getYPosition(), 1);
+        Position position = new Position(1, 1);
+        rover.init(position, "S");
+        assertEquals(rover.getPosition().getX(), 1);
+        assertEquals(rover.getPosition().getY(), 1);
         assertEquals(rover.getDirection(), "S");
     }
 }

@@ -2,31 +2,24 @@ package com.afs.tdd;
 
 public class Rover {
 
-    private Integer xPosition;
-    private Integer yPosition;
+    private Position position;
     private String direction;
 
     public Rover() {
     }
 
-    public Rover(Integer xPosition, Integer yPosition, String direction) {
-        this.xPosition = xPosition;
-        this.yPosition = yPosition;
+    public Rover(Position position, String direction) {
+        this.position = position;
         this.direction = direction;
     }
 
-    public void init(int x, int y, String direction) {
-        this.xPosition = x;
-        this.yPosition = y;
+    public void init(Position position, String direction) {
+        this.position = position;
         this.direction = direction;
     }
 
-    public int getXPosition() {
-        return this.xPosition;
-    }
-
-    public int getYPosition() {
-        return this.yPosition;
+    public Position getPosition() {
+        return this.position;
     }
 
     public String getDirection() {
