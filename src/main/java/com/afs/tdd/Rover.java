@@ -13,9 +13,9 @@ public class Rover {
         this.direction = direction;
     }
 
-    public void init(Position position, Direction direction) {
-        this.position = position;
-        this.direction = direction;
+    public void init(int xPosition, int yPosition, String direction) {
+        this.position = new Position(xPosition, yPosition);
+        this.direction = Direction.getByCode(direction);
     }
 
     public Position getPosition() {
