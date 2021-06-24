@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 public class Rover {
 
     public static final int ONE_STEP = 1;
+    public static final String INSTRUCTION_BATCH_SPLIT_REGEX = "";
+
     private Position position;
     private Direction direction;
 
@@ -32,7 +34,7 @@ public class Rover {
     }
 
     public void moveForward() {
-        switch(direction) {
+        switch (direction) {
             case EAST:
                 position.setX(position.getX() + ONE_STEP);
                 break;
@@ -48,19 +50,21 @@ public class Rover {
     }
 
     public Rover executeInstruction(String instructionBatch) {
-        List<String> instructionList = Arrays.stream(instructionBatch.split("")).collect(Collectors.toList());
-        instructionList.forEach(instruction -> {
-            switch(instruction) {
-                case "M":
-                    moveForward();
-                    break;
-                case "L":
-                    direction = Direction.turnLeft(direction);
-                    break;
-                case "R":
-                    direction = Direction.turnRight(direction);
-            }
-        });
+        List<String> instructionList = Arrays.stream(instructionBatch.split(INSTRUCTION_BATCH_SPLIT_REGEX)).collect(Collectors.toList());
+        instructionList.forEach(this::classifyThenExecuteInstruction);
         return new Rover(position, direction);
+    }
+
+    private void classifyThenExecuteInstruction(String instruction) {
+        switch (instruction) {
+            case "M":
+                moveForward();
+                break;
+            case "L":
+                direction = Direction.turnLeft(direction);
+                break;
+            case "R":
+                direction = Direction.turnRight(direction);
+        }
     }
 }
